@@ -14,13 +14,15 @@ defaults:
 
 # Parámetros generales --> Buscan generalizar para cubrir todas las imágenes
 general:
-  n_down: 10
+  gauss_k: 7
+  sobel_k: 7
+  n_down: 17
   n_up: 2
-  base_thr: 0.35
-  k: 1
+  base_thr: 0.31
+  k: 2.7
   iou_thr: 0.2
-  geom_tol: 0.6
-  cov_thr: 0.35
+  geom_tol: 0.15
+  cov_thr: 0.25
   canny_low: 255
   canny_high: 85
   method: "canny"
@@ -45,7 +47,10 @@ images:
     k: 1
 
   "logo_1.png":
-    method: "canny"
+    method: "sobel"
+    gauss_k: 7
+    sobel_k: 7
+    iou_thr: 0.5
 
 
   "COCA-COLA-LOGO.jpg":
@@ -58,9 +63,11 @@ images:
 
 
   "coca_retro_1.png":
-    method: "canny"
-    base_thr: 0.20
-    k: 1
-    iou_thr: 0.1
+    method: "sobel"
+    gauss_k: 25
+    sobel_k: 11
+    base_thr: 0.30
+    k: 1.60
+    iou_thr: 0.3
     geom_tol: 0.05
-    cov_thr: 0.05
+    cov_thr: 0.5
