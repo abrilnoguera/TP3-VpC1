@@ -1,0 +1,49 @@
+# Defaults aplican si la imagen no tiene override explícito
+defaults:
+  n_down: 2
+  n_up: 1
+  base_thr: 0.5
+  k: 2
+  iou_thr: 0.6
+  geom_tol: 0.15
+  cov_thr: 0.35
+  canny_low: 255
+  canny_high: 85
+  method: "sobel"
+  debug: false
+
+# Parámetros generales --> Buscan generalizar para cubrir todas las imágenes
+general:
+  n_down: 2
+  n_up: 1
+  base_thr: 0.5
+  k: 2
+  iou_thr: 0.6
+  geom_tol: 0.15
+  cov_thr: 0.35
+  canny_low: 100
+  canny_high: 110
+  method: "sobel"
+  debug: false
+
+# Overrides por imagen (clave = nombre de archivo o patrón glob)
+images:
+  # DEFAULT --> "coca_logo_2.png" y "coca_retro_2.png"
+  
+  "coca_multi.png":
+    method: "canny"
+    n_down: 10
+    n_up: 2
+    base_thr: 0.35
+    k: 1
+    iou_thr: 0.2
+    geom_tol: 0.6
+  
+  "coca_logo_1.png":
+    method: "canny"
+    n_up: 2
+    base_thr: 0.3
+    k: 1
+
+  "logo_1.png":
+    method: "canny"
